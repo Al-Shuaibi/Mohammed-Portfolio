@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>محمد عبدالله الشعيبي | أتمتة العمليات وحلول الذكاء الاصطناعي</title>
+  <meta name="description" content="أحوّل البيانات والمهام المتكررة إلى أنظمة أسهل وقرارات أوضح: لوحات مؤشرات لحظية، ووكلاء ذكاء اصطناعي، وأنظمة إدارة مبنية على طريقة عملكم.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="محمد عبدالله الشعيبي | أتمتة العمليات وحلول الذكاء الاصطناعي">
+  <meta property="og:description" content="أفهم عملك كأنني من فريقك، ثم أبني النظام الذي يختصره.">
+  <meta property="og:image" content="assets/og.jpg">
+  <meta name="theme-color" content="#2B2118">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Readex+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      var d = document.documentElement, p = new URLSearchParams(location.search), t, l;
+      d.className += " js";
+      try { t = localStorage.getItem("ms-theme"); l = localStorage.getItem("ms-lang"); } catch (e) {}
+      if (t === "dark" || t === "light") d.setAttribute("data-theme", t);
+      l = p.get("lang") || l;
+      if (l === "en") { d.lang = "en"; d.dir = "ltr"; }
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">انتقل إلى المحتوى</a>
+
+  <div class="page" id="page">
+    <header class="nav" id="top">
+      <div class="wrap nav-inner">
+        <a class="brand" href="#top" data-i18n="brand">محمد عبدالله الشعيبي</a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#about" data-i18n="nav_about">من أنا</a>
+          <a href="#work" data-i18n="nav_work">الأعمال</a>
+          <a href="#services" data-i18n="nav_services">الخدمات</a>
+          <a href="#contact" data-i18n="nav_contact">تواصل</a>
+        </nav>
+        <div class="nav-tools">
+          <button class="tool lang-btn js-lang" type="button"><span data-i18n="lang_short">EN</span></button>
+          <button class="tool js-theme" type="button" data-i18n-aria="theme_toggle" aria-label="تبديل الوضع الليلي">
+            <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+            <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          </button>
+          <a class="btn btn-solid nav-cta" href="#contact" data-i18n="cta_request">اطلب خدمة</a>
+          <button class="tool burger" id="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" data-i18n-aria="menu" aria-label="القائمة">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <span class="nav-progress" id="progress" aria-hidden="true"></span>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero" id="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <div class="hero-id">
+              <img class="avatar" src="assets/avatar.webp" alt="" width="64" height="64">
+              <p class="hero-role"><strong data-i18n="brand">محمد عبدالله الشعيبي</strong><span data-i18n="hero_role"></span></p>
+            </div>
+            <h1 class="hero-title" id="hero-title" data-i18n="hero_title"></h1>
+            <p class="hero-lead intro" data-i18n="hero_lead"></p>
+            <p class="hero-sector intro" id="hero-sector" hidden></p>
+            <div class="hero-actions intro">
+              <a class="btn btn-solid" href="#contact" data-i18n="cta_request">اطلب خدمة</a>
+              <a class="btn btn-line" href="#work" data-i18n="hero_cta_work">شاهد الأعمال</a>
+            </div>
+            <ul class="hero-facts intro">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span data-i18n="fact_city"></span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-5 9 5-9 5-9-5Z"/><path d="M7 11.5V16c1.4 1.3 3 2 5 2s3.6-.7 5-2v-4.5"/></svg><span data-i18n="fact_degree"></span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg><span data-i18n="fact_langs"></span></li>
+            </ul>
+            <p class="hero-cv intro">
+              <a class="js-cv-ar" href="cv/Mohammed-Abdullah-Al-Shuaibi-CV-AR.pdf" download data-i18n="cv_ar"></a>
+              <a class="js-cv-en" href="cv/Mohammed-Abdullah-Al-Shuaibi-CV-EN.pdf" download data-i18n="cv_en"></a>
+            </p>
+          </div>
+          <figure class="hero-portrait">
+            <img src="assets/portrait.webp" width="760" height="1147" data-i18n-alt="portrait_alt" alt="">
+          </figure>
+        </div>
+      </section>
+
+      <!-- Signature: stage-gate -->
+      <section class="gate" id="gate" aria-labelledby="gate-title">
+        <div class="wrap gate-grid">
+          <div class="gate-copy" data-reveal>
+            <h2 id="gate-title" data-i18n="gate_title"></h2>
+            <p data-i18n="gate_desc"></p>
+            <button class="btn btn-ghost" id="gate-replay" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4"/></svg>
+              <span data-i18n="gate_replay"></span>
+            </button>
+          </div>
+          <div class="gate-viz" id="gate-viz" role="img" data-i18n-aria="gate_aria">
+            <div class="g-row g-before">
+              <span class="g-lab" data-i18n="gate_before"></span>
+              <div class="g-cells" id="g-before"></div>
+              <span class="g-note" data-i18n="gate_before_note"></span>
+              <span class="g-caption" data-i18n="gate_before_caption"></span>
+            </div>
+            <div class="g-row g-after">
+              <span class="g-lab" data-i18n="gate_after"></span>
+              <div class="g-cells" id="g-after"></div>
+              <span class="g-note" data-i18n="gate_after_note"></span>
+              <ol class="g-stages" id="g-stages"></ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results ledger -->
+      <section class="sec" id="results" aria-labelledby="results-title">
+        <div class="wrap">
+          <div class="sec-head" data-reveal>
+            <h2 id="results-title" data-i18n="results_title"></h2>
+            <p data-i18n="results_lead"></p>
+          </div>
+          <div class="ledger-wrap" id="ledger-wrap" data-reveal>
+            <table class="ledger">
+              <thead>
+                <tr>
+                  <th scope="col" data-i18n="col_result"></th>
+                  <th scope="col" data-i18n="col_context"></th>
+                  <th scope="col" data-i18n="col_where"></th>
+                </tr>
+              </thead>
+              <tbody id="ledger-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="sec sec-tint" id="about" aria-labelledby="about-title">
+        <div class="wrap about-grid">
+          <div class="about-copy" data-reveal>
+            <h2 id="about-title" data-i18n="about_title"></h2>
+            <p class="about-p1" data-i18n="about_p1"></p>
+            <p data-i18n="about_p2"></p>
+            <dl class="about-facts">
+              <div><dt data-i18n="about_edu_label"></dt><dd data-i18n="about_edu"></dd></div>
+              <div><dt data-i18n="about_lang_label"></dt><dd data-i18n="about_lang"></dd></div>
+            </dl>
+          </div>
+          <div class="about-path" data-reveal style="--d:120ms">
+            <h3 data-i18n="about_path"></h3>
+            <ol class="timeline" id="timeline"></ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Work -->
+      <section class="sec" id="work" aria-labelledby="work-title">
+        <div class="wrap">
+          <div class="sec-head sec-head-row" data-reveal>
+            <div>
+              <h2 id="work-title" data-i18n="work_title"></h2>
+              <p data-i18n="work_lead"></p>
+            </div>
+            <div class="filters" role="group" data-i18n-aria="filter_label" id="filters"></div>
+          </div>
+          <div class="bento" id="bento"></div>
+          <p class="empty" id="work-empty" hidden data-i18n="empty_filter"></p>
+        </div>
+      </section>
+
+      <!-- Services for consulting -->
+      <section class="sec sec-tint" id="services" aria-labelledby="services-title">
+        <div class="wrap">
+          <div class="sec-head" data-reveal>
+            <h2 id="services-title" data-i18n="services_title"></h2>
+            <p data-i18n="services_lead"></p>
+          </div>
+          <ul class="services" id="services-list"></ul>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section class="sec" id="process" aria-labelledby="process-title">
+        <div class="wrap">
+          <div class="sec-head" data-reveal>
+            <h2 id="process-title" data-i18n="process_title"></h2>
+            <p data-i18n="process_lead"></p>
+          </div>
+          <ol class="steps" id="steps"></ol>
+        </div>
+      </section>
+
+      <!-- Certificates & documents -->
+      <section class="sec sec-tight" id="certs" aria-labelledby="certs-title">
+        <div class="wrap">
+          <div class="sec-head" data-reveal>
+            <h2 id="certs-title" data-i18n="certs_title"></h2>
+            <p data-i18n="certs_lead"></p>
+          </div>
+          <h3 class="docs-h" data-reveal data-i18n="exp_docs_title"></h3>
+          <ul class="exp-docs" id="exp-docs"></ul>
+          <h3 class="docs-h" data-reveal data-i18n="courses_title"></h3>
+          <ul class="certs" id="certs-list"></ul>
+          <p class="name-note" data-i18n="name_note"></p>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="sec contact" id="contact" aria-labelledby="contact-title">
+        <div class="wrap contact-grid">
+          <div class="contact-form-wrap" data-reveal>
+            <h2 id="contact-title" data-i18n="contact_title"></h2>
+            <p class="contact-lead" data-i18n="contact_lead"></p>
+            <form class="form" id="contact-form" novalidate>
+              <div class="f-row">
+                <label class="field">
+                  <span data-i18n="f_name"></span>
+                  <input id="f-name" name="name" autocomplete="name" required aria-describedby="err-name">
+                  <small class="err" id="err-name" hidden data-i18n="err_name"></small>
+                </label>
+                <label class="field">
+                  <span data-i18n="f_org"></span>
+                  <input id="f-org" name="org" autocomplete="organization" data-i18n-ph="f_org_ph">
+                </label>
+              </div>
+              <label class="field">
+                <span data-i18n="f_sector"></span>
+                <select id="f-sector" name="sector">
+                  <option value="consulting" data-i18n="opt_consulting"></option>
+                  <option value="tech" data-i18n="opt_tech"></option>
+                  <option value="other" data-i18n="opt_other"></option>
+                </select>
+              </label>
+              <fieldset class="field chips-field">
+                <legend data-i18n="f_type"></legend>
+                <div class="chips">
+                  <label class="chip"><input type="radio" name="type" value="type_project" checked><span data-i18n="type_project"></span></label>
+                  <label class="chip"><input type="radio" name="type" value="type_job"><span data-i18n="type_job"></span></label>
+                  <label class="chip"><input type="radio" name="type" value="type_discovery"><span data-i18n="type_discovery"></span></label>
+                  <label class="chip"><input type="radio" name="type" value="type_dhimma"><span data-i18n="type_dhimma"></span></label>
+                </div>
+              </fieldset>
+              <label class="field">
+                <span data-i18n="f_details"></span>
+                <textarea id="f-details" name="details" rows="4" required data-i18n-ph="f_details_ph" aria-describedby="err-details"></textarea>
+                <small class="err" id="err-details" hidden data-i18n="err_details"></small>
+              </label>
+              <div class="form-actions">
+                <a class="btn btn-solid" id="send-wa" href="#" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-3.6A8 8 0 1 1 8 19.1L4 20Z"/><path d="M9.2 8.6c.2-.4.5-.4.8-.4h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .5-.1.6l-.5.6c.6 1.1 1.5 2 2.6 2.6l.6-.5c.2-.2.4-.2.6-.1l1.5.6c.3.1.4.3.4.5v.5c0 .3 0 .6-.4.8-.5.3-1.2.4-1.8.2a8 8 0 0 1-5.3-5.3c-.2-.6-.1-1.3.2-1.8Z"/></svg>
+                  <span data-i18n="send_wa"></span>
+                </a>
+                <a class="btn btn-line" id="send-mail" href="#" data-i18n="send_mail"></a>
+              </div>
+            </form>
+          </div>
+          <aside class="contact-direct" data-reveal style="--d:120ms">
+            <h3 data-i18n="direct"></h3>
+            <ul class="direct-list">
+              <li><span class="d-lab" data-i18n="direct_phone"></span><a class="js-phone" href="#" dir="ltr"></a></li>
+              <li><span class="d-lab" data-i18n="direct_email"></span><a class="js-email" href="#" dir="ltr"></a></li>
+              <li><span class="d-lab" data-i18n="direct_linkedin"></span><a class="js-linkedin" href="#" target="_blank" rel="noopener" data-i18n="linkedin_cta"></a></li>
+            </ul>
+            <div class="direct-cv">
+              <a class="btn btn-line js-cv-ar" href="#" download data-i18n="cv_ar"></a>
+              <a class="btn btn-line js-cv-en" href="#" download data-i18n="cv_en"></a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap foot-inner">
+        <p data-i18n="footer"></p>
+        <a href="#top" class="brand brand-sm" data-i18n="brand"></a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Compact menu -->
+  <div class="scrim" id="scrim"></div>
+  <div class="menu-pop" id="drawer" inert>
+    <nav class="menu-links" aria-label="Mobile">
+      <a href="#about" data-i18n="nav_about"></a>
+      <a href="#work" data-i18n="nav_work"></a>
+      <a href="#services" data-i18n="nav_services"></a>
+      <a href="#contact" data-i18n="nav_contact"></a>
+    </nav>
+    <div class="menu-foot">
+      <a class="btn btn-solid" href="#contact" data-i18n="cta_request"></a>
+    </div>
+  </div>
+
+  <dialog class="dv" id="dv" aria-labelledby="dv-title">
+    <div class="dv-inner" id="dv-inner"></div>
+  </dialog>
+
+  <dialog class="pd" id="pd" aria-labelledby="pd-title">
+    <div class="pd-inner" id="pd-inner"></div>
+  </dialog>
+
+  <script src="data/site.js"></script>
+  <script src="data/projects.js"></script>
+  <script src="data/sheet-demo.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
