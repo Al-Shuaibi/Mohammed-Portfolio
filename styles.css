@@ -61,10 +61,10 @@
    Base
    =========================================================== */
 *, *::before, *::after { box-sizing: inherit; }
-html { height: 100%; scrollbar-gutter: stable; scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 84px); -webkit-text-size-adjust: 100%; }
+html { height: 100%; overflow-x: clip; scrollbar-gutter: stable; scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 84px); -webkit-text-size-adjust: 100%; }
 body {
   margin: 0; min-height: 100%; background: var(--bg); color: var(--ink);
-  font-family: var(--f-body); font-size: 1.0625rem; line-height: 1.85; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  font-family: var(--f-body); font-size: 1.0625rem; line-height: 1.85; -webkit-font-smoothing: antialiased; overflow-x: hidden; overflow-x: clip;
 }
 html[lang="en"] body { line-height: 1.6; }
 .page { background: var(--bg); min-height: 100vh; position: relative; }
@@ -109,7 +109,8 @@ svg { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColo
   border-bottom: 1px solid var(--line);
 }
 .nav-inner { display: flex; align-items: center; gap: 1.5rem; min-height: 62px; }
-.brand { font-family: var(--f-display); font-weight: 600; font-size: 1.1rem; text-decoration: none; color: var(--ink); white-space: nowrap; }
+.brand { font-family: var(--f-display); font-weight: 600; font-size: 1.1rem; text-decoration: none; color: var(--ink); white-space: nowrap; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.brand-short { display: none; }
 .nav-links { display: flex; gap: 1.5rem; margin-inline-start: auto; }
 .nav-links a { text-decoration: none; color: var(--ink-2); font-weight: 500; font-size: .97rem; position: relative; padding-block: .3rem; }
 .nav-links a::after {
@@ -159,7 +160,13 @@ svg { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColo
   .burger { display: inline-grid; }
   .nav-tools { margin-inline-start: auto; }
 }
-@media (max-width: 560px) { .nav-cta { display: none; } }
+@media (max-width: 560px) {
+  .nav-cta { display: none; }
+  .nav-inner { gap: .75rem; }
+  .nav-tools { flex: none; }
+  .brand-full { display: none; }
+  .brand-short { display: inline; }
+}
 
 /* ===========================================================
    Compact menu (opens from the burger)
@@ -415,7 +422,7 @@ html[lang="en"] .hero-title { line-height: 1.12; letter-spacing: -0.025em; max-w
   .ledger tr { padding: 1rem 1.15rem; border-bottom: 1px solid var(--line); }
   .ledger tbody tr:last-child { border-bottom: 0; }
   .ledger td { padding: 0; border: 0; }
-  .ledger .l-result { border: 0; font-size: 1.12rem; margin-bottom: .2rem; }
+  .ledger .l-result { border: 0; font-size: 1.12rem; margin-bottom: .2rem; width: auto; }
   .ledger .l-where { margin-top: .3rem; white-space: normal; }
   .ledger-wrap { border-top: 3px double var(--ink); }
 }
@@ -492,7 +499,7 @@ html[lang="en"] .hero-title { line-height: 1.12; letter-spacing: -0.025em; max-w
 .card.full .card-body { flex: 1 1 0; justify-content: center; padding: 1rem 1.2rem; }
 .card.full .card-open { margin-top: .6rem; }
 .empty { color: var(--muted); padding: 1.5rem 0; }
-@media (max-width: 860px) { .card { grid-column: 1 / -1; } .card.full { flex-direction: column; } }
+@media (max-width: 860px) { .card { grid-column: 1 / -1; } .card.full { flex-direction: column; } .card.full .card-visual { flex: none; } }
 
 /* Mocks */
 .mock { position: absolute; inset: 0; padding: 14px; font-size: 11px; line-height: 1.5; color: var(--ink-2); }
@@ -769,7 +776,7 @@ html[lang="en"] .hero-title { line-height: 1.12; letter-spacing: -0.025em; max-w
 .ms-tabs span.cur { background: var(--surface); color: var(--accent); font-weight: 700; box-shadow: inset 0 2px 0 var(--accent); }
 
 .pd-visual.v-sheet { aspect-ratio: auto; padding: clamp(.75rem, 2vw, 1.1rem); }
-.sx-tabs { display: flex; gap: .3rem; overflow-x: auto; padding-bottom: .2rem; border-bottom: 1px solid var(--line-strong); margin-bottom: 1rem; scrollbar-width: none; }
+.sx-tabs { display: flex; flex-wrap: wrap; gap: .3rem; padding-bottom: .2rem; border-bottom: 1px solid var(--line-strong); margin-bottom: 1rem; scrollbar-width: none; }
 .sx-tab { flex: none; background: none; border: 0; cursor: pointer; padding: .5rem .85rem; font-weight: 600; font-size: .95rem; color: var(--muted); border-bottom: 3px solid transparent; margin-bottom: -.25rem; transition: color .2s, border-color .25s; }
 .sx-tab:hover { color: var(--ink); }
 .sx-tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
@@ -920,3 +927,36 @@ html.modal-open, html.modal-open body { overflow: hidden; }
 .gal-zoom:hover img { transform: scale(1.01); }
 .dv:has(.dv-wide) { width: min(1280px, calc(100% - 2rem)); }
 .dv-img.dv-wide img { max-height: 78dvh; }
+
+/* ===========================================================
+   Phones: everything fits the screen width, no sideways dragging
+   =========================================================== */
+@media (max-width: 720px) {
+  .sx-tab { padding: .45rem .6rem; font-size: .9rem; }
+  .sx-scroll { overflow-x: hidden; max-height: 420px; }
+  .sx-table thead { display: none; }
+  .sx-table, .sx-table tbody, .sx-table tr { display: block; width: 100%; }
+  .sx-table tr { padding: .6rem .85rem; border-top: 1px solid var(--line); }
+  .sx-table tbody tr:first-child { border-top: 0; }
+  .sx-table td { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: .12rem 0; border: 0; white-space: normal; }
+  .sx-table td::before { content: attr(data-label); color: var(--muted); font-size: .8rem; font-weight: 600; flex: none; }
+  .sx-table td:first-child { font-weight: 700; color: var(--ink); padding-bottom: .25rem; }
+  .sx-table td:first-child::before { content: none; }
+  .sx-table td.sx-none { display: block; }
+  .sx-table td.sx-none::before { content: none; }
+  .sx-table tr:hover td { background: none; }
+}
+
+/* Phones: long lists show two items, the rest behind "show all" */
+.more-btn { display: none; }
+@media (max-width: 720px) {
+  .collapsible:not(.expanded) > li:nth-child(n+3) { display: none; }
+  .more-btn { display: flex; width: 100%; justify-content: center; margin-top: 1rem; }
+}
+
+/* Dhimma card: a clear screenshot like the other systems */
+.card-visual.v-cover { background: #F5F7F6; }
+.card-visual.v-cover > img { width: 100%; height: 100%; object-fit: contain; object-position: 50% 50%; }
+/* Full-page screenshots open at full width and scroll down, never shrink */
+.dv-img.dv-tall img { max-height: none; }
+.gal-hint { display: block; color: var(--accent); font-weight: 600; }

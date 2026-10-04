@@ -7,7 +7,7 @@
   <meta name="description" content="أحوّل البيانات والمهام المتكررة إلى أنظمة أسهل وقرارات أوضح: لوحات مؤشرات لحظية، ووكلاء ذكاء اصطناعي، وأنظمة إدارة مبنية على طريقة عملكم.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="محمد عبدالله الشعيبي | أتمتة العمليات وحلول الذكاء الاصطناعي">
-  <meta property="og:description" content="أفهم عملك كأنني من فريقك، ثم أبني النظام الذي يختصره.">
+  <meta property="og:description" content="أدرس المشكلة، ثم أبني النظام المناسب لحلّها.">
   <meta property="og:image" content="https://mohammed-alshuaibi.vercel.app/assets/og.jpg">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -34,7 +34,7 @@
   <div class="page" id="page">
     <header class="nav" id="top">
       <div class="wrap nav-inner">
-        <a class="brand" href="#top" data-i18n="brand">محمد عبدالله الشعيبي</a>
+        <a class="brand" href="#top"><span class="brand-full" data-i18n="brand">محمد عبدالله الشعيبي</span><span class="brand-short" data-i18n="brand_short">محمد الشعيبي</span></a>
         <nav class="nav-links" aria-label="Primary">
           <a href="#about" data-i18n="nav_about">من أنا</a>
           <a href="#work" data-i18n="nav_work">الأعمال</a>
@@ -78,8 +78,8 @@
               <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg><span data-i18n="fact_langs"></span></li>
             </ul>
             <p class="hero-cv intro">
-              <a class="js-cv-ar" href="cv/Mohammed-Abdullah-Al-Shuaibi-CV-AR.pdf" download data-i18n="cv_ar"></a>
-              <a class="js-cv-en" href="cv/Mohammed-Abdullah-Al-Shuaibi-CV-EN.pdf" download data-i18n="cv_en"></a>
+              <a class="js-cv-ar" href="cv/Mohammed-Abdullah-Al-Shuaibi-CV-AR.pdf" download="محمد الشعيبي.pdf" data-i18n="cv_ar"></a>
+              <a class="js-cv-en" href="cv/Mohammed-Abdullah-Al-Shuaibi-CV-EN.pdf" download="Mohammed Al-Shuaibi.pdf" data-i18n="cv_en"></a>
             </p>
           </div>
           <figure class="hero-portrait">
@@ -179,7 +179,8 @@
             <h2 id="services-title" data-i18n="services_title"></h2>
             <p data-i18n="services_lead"></p>
           </div>
-          <ul class="services" id="services-list"></ul>
+          <ul class="services collapsible" id="services-list"></ul>
+          <button class="btn btn-line more-btn" type="button" data-more="services-list" aria-controls="services-list" aria-expanded="false"></button>
         </div>
       </section>
 
@@ -190,7 +191,8 @@
             <h2 id="process-title" data-i18n="process_title"></h2>
             <p data-i18n="process_lead"></p>
           </div>
-          <ol class="steps" id="steps"></ol>
+          <ol class="steps collapsible" id="steps"></ol>
+          <button class="btn btn-line more-btn" type="button" data-more="steps" aria-controls="steps" aria-expanded="false"></button>
         </div>
       </section>
 

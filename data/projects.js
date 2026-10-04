@@ -71,8 +71,8 @@ window.PROJECTS = [
       en: "Three steps: you bring in dues from PDF invoices, Excel or manual entry, through a review queue only an authorized employee can approve. The platform then follows up for you with WhatsApp, SMS and email reminders under a policy you set. Finally, payments are recorded and reconciled: receipts are read and confirmed by the accountant, amounts are allocated oldest first, and your figures match your accounting system monthly."
     },
     result: {
-      ar: "28 ميزة جاهزة لنسخة الإطلاق، منها التصنيف الائتماني لكل مدين وشريط أعمار الديون والتصعيد المتدرج للمتأخرين، مع حزم لكل قطاع تبدأ بالجملة والتوزيع.",
-      en: "28 features ready for the launch version, including a credit rating per debtor, a debt-aging bar and graduated escalation for late payers, with sector packs starting with wholesale and distribution."
+      ar: "30 ميزة جاهزة لنسخة الإطلاق، منها التصنيف الائتماني لكل مدين وشريط أعمار الديون والتصعيد المتدرج للمتأخرين، مع حزم لكل قطاع تبدأ بالجملة والتوزيع.",
+      en: "30 features ready for the launch version, including a credit rating per debtor, a debt-aging bar and graduated escalation for late payers, with sector packs starting with wholesale and distribution."
     },
     labels: { solution: "dh_solution", result: "dh_goal" },
     roadmap: true,
@@ -82,10 +82,12 @@ window.PROJECTS = [
       en: ["Credit rating per debtor", "Debt-aging bar and report", "Automated WhatsApp Business reminders", "Graduated escalation for late payers", "Early-payment offers", "Reconciliation with the accounting system", "Audit log for every action", "Full isolation between companies"]
     },
     visual: {
-      type: "phone",
-      src: "assets/dhimma/landing.webp",
-      top: "assets/dhimma/landing-top.webp",
-      alt: { ar: "الصفحة التعريفية لمنصة ذمة", en: "Dhimma landing page" }
+      type: "gallery",
+      cover: { src: "assets/dhimma/cover.webp", alt: { ar: "الصفحة التعريفية لمنصة ذمة", en: "Dhimma landing page" } },
+      images: [
+        { src: "assets/dhimma/landing.webp", thumb: "assets/dhimma/cover.webp", tall: true, alt: { ar: "الصفحة التعريفية لمنصة ذمة كاملة", en: "Full Dhimma landing page" }, caption: { ar: "الصفحة التعريفية: كيف تعمل المنصة، وحاسبة النقد المحتجز، وحزم القطاعات", en: "Landing page: how it works, the cash calculator and sector packs" } },
+        { src: "assets/dhimma/features.webp", thumb: "assets/dhimma/features-top.webp", tall: true, alt: { ar: "صفحة مزايا منصة ذمة بحالة كل ميزة", en: "Dhimma features page with each feature's status" }, caption: { ar: "صفحة المزايا: كل ميزة بحالتها الصريحة، متوفرة أو قريبًا أو مخططة", en: "Features page: every feature with its honest status, available, soon or planned" } }
+      ]
     },
     calculator: true,
     links: []
@@ -146,7 +148,7 @@ window.PROJECTS = [
       en: "A React web dashboard wired directly to the dubbing system's API, updating live without reloading: each clip's status in every language, monthly and cumulative approvals, the latest approvals, and an alert when dubbing starts before translation is complete."
     },
     result: {
-      ar: "مع سير العمل المرحلي (Stage-Gate) الذي صممته، انخفضت مدة التسليم من أسبوعين إلى نحو 4 أيام، واعتُمد ونُشر أكثر من 40 فيديو. واللوحة ما زالت تعمل وتتحدث لحظيًا، وتتابع اليوم 189 نسخة دبلجة.",
+      ar: "مع سير العمل المرحلي (Stage⁠-⁠Gate) الذي صممته، انخفضت مدة التسليم من أسبوعين إلى نحو 4 أيام، واعتُمد ونُشر أكثر من 40 فيديو. واللوحة ما زالت تعمل وتتحدث لحظيًا، وتتابع اليوم 189 نسخة دبلجة.",
       en: "Together with the stage-gate workflow I designed, delivery fell from two weeks to about four days, and 40+ videos were approved and published. The dashboard still runs and updates live, tracking 189 dubbing versions today."
     },
     features: {
@@ -209,7 +211,7 @@ window.PROJECTS = [
     id: "leads",
     sectors: ["consulting"],
     size: "regular",
-    client: { ar: "مصنع مزن", en: "Mozn Factory" },
+    client: { ar: "مصنع مزن", en: "Mozzn Factory" },
     title: { ar: "قاعدة عملاء محتملين لفريق المبيعات", en: "Sales lead database" },
     summary: {
       ar: "من 7,000 سجل خام إلى 3,000 عميل مؤهل جاهز للتواصل.",

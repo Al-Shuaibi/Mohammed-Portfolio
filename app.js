@@ -86,8 +86,8 @@
     $$(".js-email-icon").forEach(function (a) { a.href = "mailto:" + c.email; });
     $$(".js-linkedin").forEach(function (a) { a.href = c.linkedin; });
     $$(".js-wa").forEach(function (a) { a.href = "https://wa.me/" + c.whatsapp; });
-    $$(".js-cv-ar").forEach(function (a) { a.href = c.cvAr; });
-    $$(".js-cv-en").forEach(function (a) { a.href = c.cvEn; });
+    $$(".js-cv-ar").forEach(function (a) { a.href = c.cvAr; a.setAttribute("download", c.cvArName); });
+    $$(".js-cv-en").forEach(function (a) { a.href = c.cvEn; a.setAttribute("download", c.cvEnName); });
     splitHeadline();
   }
 
@@ -263,10 +263,10 @@
   function visualHTML(p, ctx) {
     var v = p.visual || {};
     if (v.type === "gallery") {
-      if (ctx !== "dialog") return '<img src="' + esc(v.images[0].src) + '" alt="' + esc(L(v.images[0].alt)) + '" loading="lazy" decoding="async">';
+      if (ctx !== "dialog") { var c0 = v.cover || v.images[0]; return '<img src="' + esc(c0.src) + '" alt="' + esc(L(c0.alt)) + '" loading="lazy" decoding="async">'; }
       return '<div class="gal">' + v.images.map(function (im) {
-        return '<figure class="gal-item"><button type="button" class="gal-zoom" data-zoom="' + esc(im.src) + '" data-zoom-cap="' + esc(L(im.caption)) + '" aria-label="' + esc(L(im.alt)) + '"><img src="' + esc(im.src) + '" alt="' + esc(L(im.alt)) + '" loading="lazy"></button><figcaption>' + esc(L(im.caption)) + "</figcaption></figure>";
-      }).join("") + "</div>";
+        return '<figure class="gal-item"><button type="button" class="gal-zoom" data-zoom="' + esc(im.src) + '"' + (im.tall ? ' data-zoom-tall="1"' : "") + ' data-zoom-cap="' + esc(L(im.caption)) + '" aria-label="' + esc(L(im.alt)) + '"><img src="' + esc(im.thumb || im.src) + '" alt="' + esc(L(im.alt)) + '" loading="lazy"></button><figcaption>' + esc(L(im.caption)) + (im.tall ? ' <span class="gal-hint">' + esc(t("tap_full")) + "</span>" : "") + "</figcaption></figure>";
+      }).join("") + "</div>" + (p.calculator ? calcHTML() : "");
     }
     if (v.type === "sheet") return ctx === "dialog" ? sheetExplorer() : sheetMini();
     if (v.type === "phone") {
@@ -284,7 +284,7 @@
     if (ty === "audio") return " v-audio";
     if (ty === "sheet" && ctx === "dialog") return " v-sheet";
     if (ty === "phone") return ctx === "dialog" ? " v-phone" : " v-phone-card";
-    if (ty === "gallery") return ctx === "dialog" ? " v-gallery" : " v-shot";
+    if (ty === "gallery") return ctx === "dialog" ? " v-gallery" : (p.visual.cover ? " v-cover" : " v-shot");
     if (ty === "mock" && p.visual.name === "dhimma") return ctx === "dialog" ? " v-app" : " v-app-card";
     return "";
   }
@@ -432,7 +432,10 @@
     var arch = SD.archive.slice().sort(function (x, y) { return x[5] < y[5] ? 1 : -1; });
     return '<div class="sx-kpis sx-kpis-1"><div class="sx-kpi"><small>' + esc(t("sh_avg")) + "</small><b>" + c.avg.toFixed(1) + "</b><span>" + esc(t("sh_days")) + "</span></div></div>" +
       '<div class="sx-scroll"><table class="sx-table"><thead><tr>' + t("sh_arch_cols").map(function (h) { return "<th>" + esc(h) + "</th>"; }).join("") + "</tr></thead><tbody>" +
-      arch.map(function (r) { return "<tr><td>" + esc(r[0]) + "</td><td>" + esc(r[1]) + "</td><td>" + esc(r[2]) + '</td><td dir="ltr">' + esc(r[5]) + '</td><td><b>' + r[6] + "</b></td></tr>"; }).join("") +
+      arch.map(function (r) {
+        var h = t("sh_arch_cols"), d = function (k) { return ' data-label="' + esc(h[k]) + '"'; };
+        return "<tr><td" + d(0) + ">" + esc(r[0]) + "</td><td" + d(1) + ">" + esc(r[1]) + "</td><td" + d(2) + ">" + esc(r[2]) + "</td><td" + d(3) + '><span dir="ltr">' + esc(r[5]) + "</span></td><td" + d(4) + "><b>" + r[6] + "</b></td></tr>";
+      }).join("") +
       "</tbody></table></div>";
   }
   function sxRows(root) {
@@ -440,7 +443,8 @@
       return (!sheetState.lang || r[1] === sheetState.lang) && (!sheetState.status || r[4] === sheetState.status) && (!sheetState.editor || r[2] === sheetState.editor);
     });
     $("[data-sx-rows]", root).innerHTML = rows.length ? rows.map(function (r) {
-      return "<tr><td>" + esc(r[0]) + "</td><td>" + esc(r[1]) + "</td><td>" + esc(r[2]) + "</td><td>" + esc(r[3] || "—") + '</td><td><i class="' + stClass(r[4]) + '">' + esc(stLabel(r[4])) + '</i></td><td dir="ltr">' + esc(r[5]) + "</td></tr>";
+      var h = t("sh_cols"), d = function (k) { return ' data-label="' + esc(h[k]) + '"'; };
+      return "<tr><td" + d(0) + ">" + esc(r[0]) + "</td><td" + d(1) + ">" + esc(r[1]) + "</td><td" + d(2) + ">" + esc(r[2]) + "</td><td" + d(3) + ">" + esc(r[3] || "—") + "</td><td" + d(4) + '><i class="' + stClass(r[4]) + '">' + esc(stLabel(r[4])) + "</i></td><td" + d(5) + '><span dir="ltr">' + esc(r[5]) + "</span></td></tr>";
     }).join("") : '<tr><td colspan="6" class="sx-none">' + esc(t("sh_empty")) + "</td></tr>";
     $("[data-sx-count]", root).textContent = t("sh_showing").replace("{n}", rows.length).replace("{t}", SD.tasks.length);
   }
@@ -678,6 +682,16 @@
       return '<li class="svc" style="--d:' + (i * 90) + 'ms"><span class="term">' + esc(s.term) + "</span><h3>" + esc(L(s.title)) + "</h3><p>" + esc(L(s.desc)) + "</p>" + ex + "</li>";
     }).join("");
   }
+  // Phones: show the first two services/steps, the rest behind a button
+  function updateMore() {
+    $$("[data-more]").forEach(function (btn) {
+      var list = $("#" + btn.getAttribute("data-more"));
+      var open = list.classList.contains("expanded");
+      var key = btn.getAttribute("data-more") === "steps" ? "more_steps" : "more_services";
+      btn.textContent = open ? t("show_less") : t(key).replace("{n}", list.children.length);
+      btn.setAttribute("aria-expanded", String(open));
+    });
+  }
   function renderProcess() {
     $("#steps").innerHTML = S.process.map(function (s, i) {
       return '<li class="step" style="--d:' + (i * 110) + 'ms"><div class="step-top"><span class="step-n" aria-hidden="true">' + (i + 1) +
@@ -729,10 +743,10 @@
     var start = flipTo(dv, dvOrigin) || "translateY(24px) scale(.96)";
     dv.animate([{ transform: start, opacity: 0.2 }, { transform: "none", opacity: 1 }], { duration: 480, easing: EASE });
   }
-  function openZoom(src, cap, origin) {
+  function openZoom(src, cap, origin, tall) {
     $("#dv-inner").innerHTML = '<div class="dv-head"><div><h2 id="dv-title">' + esc(cap) + "</h2></div>" +
       '<button class="tool dv-close" type="button" aria-label="' + esc(t("close")) + '">' + ICON.close + "</button></div>" +
-      '<div class="dv-img dv-wide"><img src="' + esc(src) + '" alt="' + esc(cap) + '"></div>';
+      '<div class="dv-img dv-wide' + (tall ? " dv-tall" : "") + '"><img src="' + esc(src) + '" alt="' + esc(cap) + '"></div>';
     $(".dv-close", dv).addEventListener("click", function () { closeDoc(); });
     dvOrigin = origin || null;
     if (typeof dv.showModal === "function") dv.showModal(); else dv.setAttribute("open", "");
@@ -868,6 +882,7 @@
     renderBento();
     renderServices();
     renderProcess();
+    updateMore();
     renderCerts();
     updateSendLinks();
     syncAll();
@@ -875,8 +890,17 @@
 
   // ---------- Events ----------
   document.addEventListener("click", function (e) {
+    var more = e.target.closest("[data-more]");
+    if (more) {
+      var list = $("#" + more.getAttribute("data-more"));
+      var opening = !list.classList.contains("expanded");
+      list.classList.toggle("expanded", opening);
+      updateMore();
+      if (!opening) list.closest("section").scrollIntoView({ block: "start" });
+      return;
+    }
     var zoomBtn = e.target.closest("[data-zoom]");
-    if (zoomBtn) { openZoom(zoomBtn.getAttribute("data-zoom"), zoomBtn.getAttribute("data-zoom-cap"), zoomBtn); return; }
+    if (zoomBtn) { openZoom(zoomBtn.getAttribute("data-zoom"), zoomBtn.getAttribute("data-zoom-cap"), zoomBtn, zoomBtn.hasAttribute("data-zoom-tall")); return; }
     var reqBtn = e.target.closest("[data-request]");
     if (reqBtn) { var rd = S.experienceDocs[+reqBtn.getAttribute("data-request")]; goToContact({ text: L(rd.requestMsg), type: "type_job" }); return; }
     var docBtn = e.target.closest("[data-doc]");

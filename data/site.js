@@ -11,7 +11,10 @@ window.SITE = {
     email: "moed99695@gmail.com",
     linkedin: "https://www.linkedin.com/in/mohammed-al-shuaibi-6653341a1",
     cvAr: "cv/Mohammed-Abdullah-Al-Shuaibi-CV-AR.pdf",
-    cvEn: "cv/Mohammed-Abdullah-Al-Shuaibi-CV-EN.pdf"
+    cvEn: "cv/Mohammed-Abdullah-Al-Shuaibi-CV-EN.pdf",
+    // اسم الملف عند التحميل
+    cvArName: "محمد الشعيبي.pdf",
+    cvEnName: "Mohammed Al-Shuaibi.pdf"
   },
 
   // القطاعات المستهدفة (للفلاتر وروابط ?for=)
@@ -21,6 +24,7 @@ window.SITE = {
     ar: {
       skip: "انتقل إلى المحتوى",
       brand: "محمد عبدالله الشعيبي",
+      brand_short: "محمد الشعيبي",
       nav_about: "من أنا",
       nav_dhimma: "ذِمّة",
       nav_work: "الأعمال",
@@ -34,7 +38,7 @@ window.SITE = {
       theme_toggle: "تبديل الوضع الليلي",
 
       hero_role: "أخصائي أتمتة العمليات وحلول الذكاء الاصطناعي",
-      hero_title: "أفهم عملك كأنني من فريقك، ثم أبني النظام الذي يختصره.",
+      hero_title: "أدرس المشكلة، ثم أبني النظام المناسب لحلّها.",
       hero_lead: "أحوّل البيانات والمهام المتكررة إلى أنظمة أسهل وقرارات أوضح: لوحات مؤشرات لحظية، ووكلاء ذكاء اصطناعي، وأنظمة إدارة مبنية على طريقة عملكم.",
       hero_cta_work: "شاهد الأعمال",
       cv_ar: "السيرة الذاتية بالعربية",
@@ -48,7 +52,7 @@ window.SITE = {
       sector_tech: "للشركات التقنية: وكلاء ذكاء اصطناعي، وربط الأنظمة عبر واجهات API، وتنفيذ الحلول مع العملاء.",
 
       gate_title: "كيف اختصرت مدة التسليم",
-      gate_desc: "في مشروع دبلجة بلغات متعددة كانت المراحل تتداخل وتتكرر إعادة التسجيل. صممت سير عمل مرحليًا (Stage-Gate) لا تبدأ فيه مرحلة قبل اعتماد سابقتها.",
+      gate_desc: "في مشروع دبلجة بلغات متعددة كانت المراحل تتداخل وتتكرر إعادة التسجيل. صممت سير عمل مرحليًا (Stage⁠-⁠Gate) لا تبدأ فيه مرحلة قبل اعتماد سابقتها.",
       gate_before: "قبل",
       gate_after: "بعد",
       gate_before_note: "حتى أسبوعين",
@@ -173,6 +177,10 @@ window.SITE = {
       services_title: "ما أقدمه من خدمات",
       services_lead: "حلول تختصر وقت الفريق وتعطي الإدارة رؤية أوضح، وكل حل منها جرّبته فعليًا في عمل حقيقي.",
       see_example: "شاهد مثالًا",
+      more_services: "عرض كل الخدمات ({n})",
+      more_steps: "عرض كل المراحل ({n})",
+      show_less: "عرض أقل",
+      tap_full: "اضغط لعرض الصفحة كاملة",
 
       process_title: "منهجية العمل",
       process_lead: "نفس المبدأ الذي اختصر التسليم في رواد التراجم: لا تبدأ مرحلة قبل اعتماد سابقتها.",
@@ -229,6 +237,7 @@ window.SITE = {
     en: {
       skip: "Skip to content",
       brand: "Mohammed Abdullah Al-Shuaibi",
+      brand_short: "Mohammed Al-Shuaibi",
       nav_about: "About",
       nav_dhimma: "Dhimma",
       nav_work: "Work",
@@ -242,7 +251,7 @@ window.SITE = {
       theme_toggle: "Toggle dark mode",
 
       hero_role: "Process Automation & AI Solutions Specialist",
-      hero_title: "I learn your work like a member of your team, then build the system that shortens it.",
+      hero_title: "I study the problem, then build the system that solves it.",
       hero_lead: "I turn data and repetitive tasks into simpler systems and clearer decisions: live KPI dashboards, AI agents, and management systems built around how you work.",
       hero_cta_work: "See my work",
       cv_ar: "CV in Arabic",
@@ -314,7 +323,7 @@ window.SITE = {
       col_where: "Where",
 
       about_title: "About",
-      about_p1: "My experience brings together three angles: accounting, where I managed accounts worth over SAR 1M; operations, where I organized the workflow at Mozn Factory and wrote operating and safety procedures; and project management, where I ran a multilingual dubbing project, supervised the team and built the project's tools myself.",
+      about_p1: "My experience brings together three angles: accounting, where I managed accounts worth over SAR 1M; operations, where I organized the workflow at Mozzn Factory and wrote operating and safety procedures; and project management, where I ran a multilingual dubbing project, supervised the team and built the project's tools myself.",
       about_p2: "So I understand the work from the inside before I build a system for it, and I always start by listening: how does your team work today, and what could become easier?",
       about_edu_label: "Education",
       about_edu: "BSc Computer Science, Arab Open University",
@@ -381,6 +390,10 @@ window.SITE = {
       services_title: "What I offer",
       services_lead: "Solutions that save the team's time and give management a clearer view, each one tried in real work.",
       see_example: "See an example",
+      more_services: "Show all services ({n})",
+      more_steps: "Show all steps ({n})",
+      show_less: "Show less",
+      tap_full: "Tap to see the full page",
 
       process_title: "How I work",
       process_lead: "The same principle that cut delivery time at Rowwad: no stage starts before the previous one is approved.",
@@ -445,16 +458,16 @@ window.SITE = {
       { title: { ar: "التقارير", en: "Reports" }, items: { ar: ["المطابقة", "التقارير"], en: ["Reconciliation", "Reports"] } }
     ],
     roadmap: [
-      { tag: { ar: "متوفرة", en: "Available" }, desc: { ar: "28 ميزة في نسخة الإطلاق، من استيراد الفواتير وقراءة الإيصالات إلى التذكير الآلي والتصنيف الائتماني ومطابقة النظام المحاسبي", en: "28 features in the launch version, from invoice import and receipt reading to automated reminders, credit rating and accounting reconciliation" }, now: true },
-      { tag: { ar: "قريبًا", en: "Soon" }, desc: { ar: "الاتفاقيات الدورية، وحزم العقار والخدمات والمدارس", en: "Recurring agreements, and real estate, services and schools packs" } },
-      { tag: { ar: "مخطط", en: "Planned" }, desc: { ar: "الاتصال الآلي، وواجهة API عامة مع Webhooks", en: "Automated calls, and a public API with webhooks" } }
+      { tag: { ar: "متوفرة", en: "Available" }, desc: { ar: "30 ميزة في نسخة الإطلاق، من استيراد الفواتير وقراءة الإيصالات إلى التذكير الآلي والتصنيف الائتماني ومطابقة النظام المحاسبي", en: "30 features in the launch version, from invoice import and receipt reading to automated reminders, credit rating and accounting reconciliation" }, now: true },
+      { tag: { ar: "قريبًا", en: "Soon" }, desc: { ar: "الاتفاقيات الدورية، والاتصال الآلي، وتطبيق الجوال، وحزم العقار والخدمات والمدارس والأكاديميات", en: "Recurring agreements, automated calls, the mobile app, and real estate, services, schools and academies packs" } },
+      { tag: { ar: "مخطط", en: "Planned" }, desc: { ar: "مطابقة كشف الحساب البنكي، ومساعد ذكي داخل المنصة، وواجهة API عامة مع Webhooks", en: "Bank statement reconciliation, an in-app smart assistant, and a public API with webhooks" } }
     ]
   },
 
   ledger: [
     {
       result: { ar: "من أسبوعين إلى نحو 4 أيام", en: "From 2 weeks to about 4 days" },
-      context: { ar: "مدة تسليم المقطع بعد تصميم سير عمل مرحلي (Stage-Gate)", en: "Clip delivery time after designing a stage-gate workflow" },
+      context: { ar: "مدة تسليم المقطع بعد تصميم سير عمل مرحلي (Stage⁠-⁠Gate)", en: "Clip delivery time after designing a stage-gate workflow" },
       where: { ar: "رواد التراجم", en: "Rowwad Translation" }
     },
     {
@@ -475,7 +488,7 @@ window.SITE = {
     {
       result: { ar: "3,000 من 7,000", en: "3,000 of 7,000" },
       context: { ar: "عميل مؤهل بعد تنظيف بيانات 8 مدن وتصنيفها", en: "Qualified leads after cleaning and segmenting data from 8 cities" },
-      where: { ar: "مصنع مزن", en: "Mozn Factory" }
+      where: { ar: "مصنع مزن", en: "Mozzn Factory" }
     },
     {
       result: { ar: "أكثر من مليون ريال", en: "SAR 1M+" },
@@ -485,15 +498,15 @@ window.SITE = {
   ],
 
   timeline: [
-    { year: { ar: "2020", en: "2020" }, role: { ar: "مسؤول متجر إلكتروني", en: "Online store operator" }, org: { ar: "مصنع مزن", en: "Mozn Factory" },
+    { year: { ar: "2020", en: "2020" }, role: { ar: "مسؤول متجر إلكتروني", en: "Online store operator" }, org: { ar: "مصنع مزن", en: "Mozzn Factory" },
       desc: { ar: "أسهمت في إطلاق المتجر ثم أدرته: الطلبات والتوصيل وخدمة العملاء.", en: "Helped launch the store, then ran it: orders, delivery and customer support." } },
     { year: { ar: "2021–2022", en: "2021–2022" }, role: { ar: "محاسب", en: "Accountant" }, org: { ar: "شركة الابتسامة الجميلة لطب الأسنان", en: "Beautiful Smile Dental Co." },
       desc: { ar: "أدرت حسابات تتجاوز مليون ريال: الفواتير والمصروفات والذمم والرواتب والتسويات البنكية.", en: "Managed accounts over SAR 1M: invoices, expenses, receivables, payroll and bank reconciliations." } },
-    { year: { ar: "2025–2026", en: "2025–2026" }, role: { ar: "مساعد عمليات (Operations Assistant)", en: "Operations Assistant" }, org: { ar: "مصنع مزن", en: "Mozn Factory" },
+    { year: { ar: "2025–2026", en: "2025–2026" }, role: { ar: "مساعد عمليات", en: "Operations Assistant" }, org: { ar: "مصنع مزن", en: "Mozzn Factory" },
       desc: { ar: "نظّمت سير العمل، ووضعت خطوات تشغيل الأجهزة وإجراءات السلامة، وجداول لتنظيم دفعات تحميص القهوة، ودرّبت آلة الفرز على استبعاد الحبات غير الصالحة والمحروقة.", en: "Organized the workflow, wrote machine operating steps and safety procedures, built schedules for coffee roasting batches, and trained the sorting machine to reject defective and burnt beans." } },
     { year: { ar: "2026", en: "2026" }, role: { ar: "منسق مشاريع تقني، الذكاء الاصطناعي والأتمتة", en: "Technical project coordinator, AI & automation" }, org: { ar: "رواد التراجم (تدريب تعاوني، 5 أشهر)", en: "Rowwad Translation (co-op, 5 months)" },
       desc: { ar: "أدرت إنتاج أكثر من 40 فيديو بلغات متعددة، وأشرفت على 5 محررين و5 مشرفي لغات، وبنيت أدوات الأتمتة ولوحة المتابعة.", en: "Ran production of 40+ videos in multiple languages, supervised 5 editors and 5 language supervisors, and built the automation tools and dashboard." } },
-    { year: { ar: "الآن", en: "Now" }, role: { ar: "أبحث عن فرصة جادة", en: "Looking for a serious opportunity" },
+    { year: { ar: "الآن", en: "Now" }, role: { ar: "أبحث عن فرصتي القادمة", en: "Looking for my next opportunity" },
       desc: { ar: "أطبّق فيها ما تعلمته، وأحوّل المهام المعقدة والمتكررة إلى حلول تقنية، وأواصل التعلم.", en: "To apply what I've learned, turn complex and repetitive tasks into technical solutions, and keep learning." } }
   ],
 
@@ -511,7 +524,7 @@ window.SITE = {
     { term: "Discovery", title: { ar: "التشخيص", en: "Discovery" }, desc: { ar: "جلسة أفهم فيها سير عملكم الحالي (As-Is) وأحدد فرص التحسين.", en: "A session to understand your current workflow (As-Is) and identify improvement opportunities." }, out: { ar: "خريطة الوضع الحالي وفرص التحسين", en: "Current-state map and improvement opportunities" } },
     { term: "PRD", title: { ar: "توثيق المتطلبات", en: "Requirements" }, desc: { ar: "وثيقة متطلبات المنتج: المشكلة، والمستخدمون، والنطاق، ومؤشرات النجاح (KPIs).", en: "A product requirements document: the problem, users, scope and success metrics (KPIs)." }, out: { ar: "وثيقة PRD معتمدة منكم", en: "A PRD you sign off" } },
     { term: "MVP", title: { ar: "النموذج الأولي", en: "Prototype" }, desc: { ar: "نسخة أولى تعمل على حالة حقيقية من عملكم، تحكمون عليها قبل التوسع.", en: "A first version running on a real case from your work, judged before scaling." }, out: { ar: "نموذج أولي قابل للاستخدام", en: "A usable prototype" } },
-    { term: "Build", title: { ar: "البناء والربط", en: "Build and integrate" }, desc: { ar: "أبني النظام على مراحل (Stage-Gate) وأربطه بأدواتكم الحالية عبر واجهات API.", en: "I build in stages (stage-gate) and connect the system to your existing tools via APIs." }, out: { ar: "نظام مربوط بأدواتكم", en: "A system connected to your tools" } },
+    { term: "Build", title: { ar: "البناء والربط", en: "Build and integrate" }, desc: { ar: "أبني النظام على مراحل (Stage⁠-⁠Gate) وأربطه بأدواتكم الحالية عبر واجهات API.", en: "I build in stages (stage-gate) and connect the system to your existing tools via APIs." }, out: { ar: "نظام مربوط بأدواتكم", en: "A system connected to your tools" } },
     { term: "UAT", title: { ar: "اختبار القبول والإطلاق", en: "Acceptance and launch" }, desc: { ar: "يختبر فريقكم النظام على سيناريوهات حقيقية، ثم نطلقه رسميًا (Go-Live).", en: "Your team tests the system on real scenarios, then we go live." }, out: { ar: "اعتماد القبول وإطلاق النظام", en: "Sign-off and go-live" } },
     { term: "Continuous Improvement", title: { ar: "المتابعة والتحديث", en: "Follow-up and updates" }, desc: { ar: "أتابع الأداء بعد الإطلاق، وأطوّر النظام مع نمو احتياجاتكم.", en: "I track performance after launch and evolve the system as your needs grow." }, out: { ar: "تحديثات دورية وتقارير أداء", en: "Regular updates and performance reports" } }
   ],
